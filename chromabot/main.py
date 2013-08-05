@@ -100,9 +100,13 @@ class Bot(object):
 
         cur = now()
         elapsed = (cur - loop_start) + self.config["bot"]["sleep"]
-
+        
+        #Get local time (Assuming the bot runs in EST)
+        #In the example format: "Sunday, 02:14:12 PM"
+        esttime = time.strftime("%A, %I:%M:%S %p", time.localtime())
+        
         bot_report = ("Bot Status:\n\n"
-                      "* Last run at %s\n\n"
+                      "* Last run at "+esttime+"\n\n"
                       "* Seconds per Frame: %d") % (timestr(cur), elapsed)
 
         report = "%s\n\n%s" % (land_report, bot_report)
