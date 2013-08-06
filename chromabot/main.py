@@ -103,7 +103,7 @@ class Bot(object):
 
         bot_report = ("Bot Status:\n\n"
                       "* Last run at %s\n\n"
-                      "* Seconds per Frame: %d") % (timestr(cur), elapsed)
+                      "* Seconds per Frame: %d") % (timestri(cur), elapsed)
 
         report = "%s\n\n%s" % (land_report, bot_report)
 
